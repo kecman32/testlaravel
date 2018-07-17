@@ -4,7 +4,7 @@
 
 @section('content')
 
-		{!! Form::model($post, ['route' => ['posts.update', $post->id]]) !!}
+		{!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT']) !!}
 	<div class="row mt-5">
 			
 			<div class="col-md-8">
@@ -16,7 +16,7 @@
 				
 			</div>
 
-			<div class="col-md-4 pl-4">
+			<div class="col-md-4 pl-4 mt-5">
 				<div class="well">
 					<dl class="dl-horizontel">
 						<dt>Created At:</dt>
@@ -36,7 +36,8 @@
 							{{-- <a href="#" class="btn btn-primary btn-block">Edit</a> --}}
 						</div>
 						<div class="col-sm-6">
-							{!! Html::linkRoute('posts.update', 'Save Changes', array($post->id), array('class' => 'btn btn-success btn-block')) !!}
+							{{ Form::submit('Save Changes', array('class' => 'btn btn-success btn-block')) }}
+							{{-- {!! Html::linkRoute('posts.update', 'Save Changes', array($post->id), array('class' => 'btn btn-success btn-block')) !!} --}}
 							{{-- <a href="#" class="btn btn-danger btn-block">Delete</a> --}}
 						</div>
 					</div>
